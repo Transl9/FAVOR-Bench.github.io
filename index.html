@@ -1,198 +1,442 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAVOR-Bench: A Benchmark for LLM Evaluation</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>FAVOR-Bench</title>
+
+    <link rel="icon" href="./static/images/favor-bench.jpg">
+    <!-- 保留其他head内容 -->
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">FAVOR-Bench</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#abstract">Abstract</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#demo">Demo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#citation">Citation</a></li>
-                </ul>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <!-- 导航栏内容可以保持，只需修改下拉菜单中的内容 -->
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+                <a class="navbar-link">
+                    More Research
+                </a>
+                <div class="navbar-dropdown">
+                    <!-- 可以根据需要添加更多相关研究链接 -->
+                    <a class="navbar-item" href="相关项目链接">
+                        <b>相关项目名称</b>
+                    </a>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- 头部区域 -->
-    <header class="header-section">
-        <div class="container text-center">
-            <h1 class="mt-5 pt-5">FAVOR-Bench</h1>
-            <p class="lead">A Comprehensive Benchmark for Evaluating Large Language Models</p>
-            
-            <div class="mt-4 button-group">
-                <a href="https://arxiv.org/abs/XXXX.XXXXX" class="btn btn-primary" target="_blank">
-                    <i class="fas fa-file-alt"></i> Paper
-                </a>
-                <a href="https://github.com/username/FAVOR-Bench" class="btn btn-dark" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://huggingface.co/datasets/username/FAVOR-Bench" class="btn btn-success" target="_blank">
-                    <i class="fas fa-code"></i> Hugging Face
-                </a>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title is-bold">
+                        <img src="static/images/favor-bench.jpg" style="width:1.6em;vertical-align: middle" alt="Logo"/>
+                        <span class="video-mme" style="vertical-align: middle">FAVOR-Bench</span>
+                    </h1>
+                    <h2 class="subtitle is-3 publication-subtitle" , style="margin-bottom: 20px;">
+                        Fine-grained Audio-Visual Object Relational Understanding Benchmark
+                    </h2>
+
+                    <div class="is-size-5 publication-authors" , style="width: 80%; margin: 20px auto;" ,>
+                        <span class="author-block" , style="font-size:24px"><a href="项目GitHub链接">FAVOR-Bench Team</a></span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
+                                <a href="论文arXiv链接" class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="ai ai-arxiv"></i>
+                                  </span>
+                                  <span>arXiv</span>
+                                </a>
+                            </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                                <a href="GitHub代码仓库链接" class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="fab fa-github"></i>
+                                  </span>
+                                  <span>Code</span>
+                                </a>
+                            </span>
+                            <!-- Dataset Link. -->
+                            <span class="link-block">
+                                <a href="数据集链接" class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <p style="font-size:18px">📊</p>
+                                  </span>
+                                  <span>Dataset</span>
+                                </a>
+                            </span>
+                            <!-- Leaderboard Link. -->
+                            <span class="link-block">
+                                <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <p style="font-size:18px">🏆</p>
+                                  </span>
+                                  <span>Leaderboard</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- 主要内容 -->
-    <main class="container mt-5">
-        <!-- 摘要部分 -->
-        <section id="abstract" class="mb-5">
-            <h2>Abstract</h2>
-            <div class="row">
-                <div class="col-lg-8">
-                    <p>
-                        FAVOR-Bench is a comprehensive benchmark designed to evaluate large language models 
-                        across multiple dimensions including factuality, reasoning, understanding, and robustness.
-                        Our benchmark provides a standardized way to assess model performance and helps
-                        identify strengths and weaknesses in current state-of-the-art language models.
+<section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Introduction</h2>
+                <div class="content has-text-justified">
+                    <!-- 这里添加FAVOR-Bench的介绍 -->
+                    FAVOR-Bench is a fine-grained audio-visual object relational understanding benchmark designed to evaluate multimodal large language models (MLLMs) on their ability to comprehend complex relationships between objects in audio-visual content. The benchmark focuses on challenging tasks that require integrating information from both visual and audio modalities to accurately understand object interactions, attributes, and relationships.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Motivation Section (新添加的部分) -->
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Motivation</h2>
+                <div class="content">
+                    <div class="columns">
+                        <!-- 左侧图片 -->
+                        <div class="column is-half">
+                            <figure class="image">
+                                <img src="static/images/motivation.png" alt="FAVOR-Bench Motivation">
+                            </figure>
+                        </div>
+                        <!-- 右侧文字 -->
+                        <div class="column is-half" style="display: flex; align-items: center;">
+                            <div class="content has-text-justified">
+                                <p>Current multimodal models excel at basic object recognition but struggle with complex relational understanding across audio and visual modalities. FAVOR-Bench addresses this gap by providing a comprehensive evaluation framework that tests models on their ability to understand fine-grained object relations, interactions, and attributes in multimodal contexts. This benchmark is designed to push the boundaries of multimodal AI systems toward more human-like understanding of audiovisual content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Example Section -->
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+                <h2 class="title is-3">Example</h2>
+                <div class="content has-text-justified">
+                    <div>
+                        <div class="content has-text-centered">
+                            <img src="static/images/example.jpg" style="width: 100%;"/>
+                            <p style="margin-bottom: 30px;">🔗 Full Video Link:&nbsp;&nbsp;<a href="视频链接">视频链接</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leaderboard Section (修改后) -->
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-full has-text-centered content">
+                <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+                <div class="content">
+                    <p class="mt-3">Performance scores on FAVOR-Bench.</p>
+
+                    <table class="js-sort-table" id="results">
+                        <thead>
+                        <tr>
+                            <th rowspan="2" class="no-sort" style="vertical-align: middle;"><strong>#</strong></th>
+                            <th rowspan="2" class="no-sort" style="vertical-align: middle;"><strong>Model</strong></th>
+                            <th rowspan="2" class="no-sort" style="vertical-align: middle;"><strong>Date</strong></th>
+                            <th rowspan="2" class="no-sort" style="vertical-align: middle;"><strong>Input</strong></th>
+                            <th colspan="7" style="text-align: center;"><strong>Close-Ended</strong></th>
+                            <th colspan="3" style="text-align: center;"><strong>Open-Ended</strong></th>
+                        </tr>
+                        <tr>
+                            <th style="vertical-align: middle;"><strong>ALL (%)</strong></th>
+                            <th style="vertical-align: middle;"><strong>AS (%)</strong></th>
+                            <th style="vertical-align: middle;"><strong>HAC (%)</strong></th>
+                            <th style="vertical-align: middle;"><strong>SAD (%)</strong></th>
+                            <th style="vertical-align: middle;"><strong>MAD (%)</strong></th>
+                            <th style="vertical-align: middle;"><strong>CM (%)</strong></th>
+                            <th style="vertical-align: middle;"><strong>NSM (%)</strong></th>
+                            <th style="vertical-align: middle;"><strong>GPT-C</strong></th>
+                            <th style="vertical-align: middle;"><strong>GPT-D</strong></th>
+                            <th style="vertical-align: middle;"><strong>LLM-Free</strong></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Full mark row -->
+                            <tr style="background-color: #eff0f1;">
+                                <td style="vertical-align: middle;"></td>
+                                <td style="vertical-align: middle;"><b>Full mark</b></td>
+                                <td style="vertical-align: middle;">--</td>
+                                <td style="vertical-align: middle;">--</td>
+                                <td style="vertical-align: middle;">100</td>
+                                <td style="vertical-align: middle;">100</td>
+                                <td style="vertical-align: middle;">100</td>
+                                <td style="vertical-align: middle;">100</td>
+                                <td style="vertical-align: middle;">100</td>
+                                <td style="vertical-align: middle;">100</td>
+                                <td style="vertical-align: middle;">100</td>
+                                <td style="vertical-align: middle;">10</td>
+                                <td style="vertical-align: middle;">10</td>
+                                <td style="vertical-align: middle;">100</td>
+                            </tr>
+                            <!-- Random row -->
+                            <tr style="background-color: #eff0f1;">
+                                <td style="vertical-align: middle;"></td>
+                                <td style="vertical-align: middle;"><b>Random</b></td>
+                                <td style="vertical-align: middle;">--</td>
+                                <td style="vertical-align: middle;">--</td>
+                                <td style="vertical-align: middle;">20</td>
+                                <td style="vertical-align: middle;">20</td>
+                                <td style="vertical-align: middle;">20</td>
+                                <td style="vertical-align: middle;">20</td>
+                                <td style="vertical-align: middle;">20</td>
+                                <td style="vertical-align: middle;">20</td>
+                                <td style="vertical-align: middle;">20</td>
+                                <td style="vertical-align: middle;">--</td>
+                                <td style="vertical-align: middle;">--</td>
+                                <td style="vertical-align: middle;">--</td>
+                            </tr>
+                            
+                            <!-- Proprietary MLLMs section -->
+                            <tr style="background-color: #E3F8F8;">
+                                <td colspan="14" style="text-align: left;"><span style="color: gray;"><i><b>Proprietary MLLMs</b></i></span></td>
+                            </tr>
+                            
+                            <!-- Gemini-1.5-Pro -->
+                            <tr style="background-color: #E3F8F8;">
+                                <td style="vertical-align: middle;"></td>
+                                <td style="vertical-align: middle;"><b><a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf">Gemini-1.5-Pro</a></b><p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p></td>
+                                <td style="vertical-align: middle;">2024-04</td>
+                                <td style="vertical-align: middle;">1 fps*</td>
+                                <td style="vertical-align: middle;"><b>49.87</b></td>
+                                <td style="vertical-align: middle;"><u>49.22</u></td>
+                                <td style="vertical-align: middle;"><b>53.73</b></td>
+                                <td style="vertical-align: middle;"><b>48.80</b></td>
+                                <td style="vertical-align: middle;"><b>54.85</b></td>
+                                <td style="vertical-align: middle;"><b>41.58</b></td>
+                                <td style="vertical-align: middle;"><u>56.25</u></td>
+                                <td style="vertical-align: middle;"><u>4.52</u></td>
+                                <td style="vertical-align: middle;"><b>4.68</b></td>
+                                <td style="vertical-align: middle;"><u>52.91</u></td>
+                            </tr>
+                            
+                            <!-- GPT-4o -->
+                            <tr style="background-color: #E3F8F8;">
+                                <td style="vertical-align: middle;"></td>
+                                <td style="vertical-align: middle;"><b><a href="https://openai.com/index/hello-gpt-4o/">GPT-4o</a></b><p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p></td>
+                                <td style="vertical-align: middle;">2024-08</td>
+                                <td style="vertical-align: middle;">1 fps*</td>
+                                <td style="vertical-align: middle;">42.09</td>
+                                <td style="vertical-align: middle;">40.65</td>
+                                <td style="vertical-align: middle;">45.10</td>
+                                <td style="vertical-align: middle;">42.84</td>
+                                <td style="vertical-align: middle;">45.48</td>
+                                <td style="vertical-align: middle;">36.00</td>
+                                <td style="vertical-align: middle;">48.44</td>
+                                <td style="vertical-align: middle;">4.33</td>
+                                <td style="vertical-align: middle;">4.01</td>
+                                <td style="vertical-align: middle;">49.50</td>
+                            </tr>
+                            
+                            <!-- Claude-3.7-Sonnet -->
+                            <tr style="background-color: #E3F8F8;">
+                                <td style="vertical-align: middle;"></td>
+                                <td style="vertical-align: middle;"><b><a href="#">Claude-3.7-Sonnet</a></b><p style="font-size: 12px; margin-left: 5px; color: #858383;">Anthropic</p></td>
+                                <td style="vertical-align: middle;">2025-02</td>
+                                <td style="vertical-align: middle;">1 fps*</td>
+                                <td style="vertical-align: middle;">43.73</td>
+                                <td style="vertical-align: middle;">45.20</td>
+                                <td style="vertical-align: middle;">43.02</td>
+                                <td style="vertical-align: middle;">41.82</td>
+                                <td style="vertical-align: middle;">48.05</td>
+                                <td style="vertical-align: middle;">39.07</td>
+                                <td style="vertical-align: middle;">46.88</td>
+                                <td style="vertical-align: middle;">4.32</td>
+                                <td style="vertical-align: middle;"><u>4.63</u></td>
+                                <td style="vertical-align: middle;">43.03</td>
+                            </tr>
+                            
+                            <!-- Open-source MLLMs section -->
+                            <tr style="background-color: #FFF5F5;">
+                                <td colspan="14" style="text-align: left;"><span style="color: gray;"><i><b>Open-source MLLMs</b></i></span></td>
+                            </tr>
+                            
+                            <!-- 添加所有开源模型... 这里展示几个，其余类似 -->
+                            <tr style="background-color: #FFF5F5;">
+                                <td style="vertical-align: middle;"></td>
+                                <td style="vertical-align: middle;"><b><a href="#">Video-LLaVA-7B</a></b><p style="font-size: 12px; margin-left: 5px; color: #858383;"></p></td>
+                                <td style="vertical-align: middle;">2023-11</td>
+                                <td style="vertical-align: middle;">8 frms</td>
+                                <td style="vertical-align: middle;">25.37</td>
+                                <td style="vertical-align: middle;">24.91</td>
+                                <td style="vertical-align: middle;">21.54</td>
+                                <td style="vertical-align: middle;">25.45</td>
+                                <td style="vertical-align: middle;">30.54</td>
+                                <td style="vertical-align: middle;">26.23</td>
+                                <td style="vertical-align: middle;">21.88</td>
+                                <td style="vertical-align: middle;">2.18</td>
+                                <td style="vertical-align: middle;">2.31</td>
+                                <td style="vertical-align: middle;">41.36</td>
+                            </tr>
+                            
+                            <!-- LLaVA-NeXT-Video-7B -->
+                            <tr style="background-color: #FFF5F5;">
+                                <td style="vertical-align: middle;"></td>
+                                <td style="vertical-align: middle;"><b><a href="#">LLaVA-NeXT-Video-7B</a></b><p style="font-size: 12px; margin-left: 5px; color: #858383;"></p></td>
+                                <td style="vertical-align: middle;">2024-05</td>
+                                <td style="vertical-align: middle;">8 frms</td>
+                                <td style="vertical-align: middle;">23.45</td>
+                                <td style="vertical-align: middle;">21.27</td>
+                                <td style="vertical-align: middle;">22.45</td>
+                                <td style="vertical-align: middle;">26.05</td>
+                                <td style="vertical-align: middle;">26.72</td>
+                                <td style="vertical-align: middle;">23.07</td>
+                                <td style="vertical-align: middle;">14.06</td>
+                                <td style="vertical-align: middle;">2.57</td>
+                                <td style="vertical-align: middle;">2.02</td>
+                                <td style="vertical-align: middle;">29.48</td>
+                            </tr>
+                            
+                            <!-- Qwen2.5-VL-72B -->
+                            <tr style="background-color: #FFF5F5;">
+                                <td style="vertical-align: middle;"></td>
+                                <td style="vertical-align: middle;"><b><a href="#">Qwen2.5-VL-72B</a></b><p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p></td>
+                                <td style="vertical-align: middle;">2025-01</td>
+                                <td style="vertical-align: middle;">1 fps</td>
+                                <td style="vertical-align: middle;"><u>48.14</u></td>
+                                <td style="vertical-align: middle;"><b>50.28</b></td>
+                                <td style="vertical-align: middle;">46.98</td>
+                                <td style="vertical-align: middle;"><u>48.13</u></td>
+                                <td style="vertical-align: middle;"><u>51.78</u></td>
+                                <td style="vertical-align: middle;"><u>40.28</u></td>
+                                <td style="vertical-align: middle;">51.56</td>
+                                <td style="vertical-align: middle;">3.37</td>
+                                <td style="vertical-align: middle;">3.44</td>
+                                <td style="vertical-align: middle;">49.72</td>
+                            </tr>
+                            
+                            <!-- 我们的方法 -->
+                            <tr style="background-color: #F1F6EC;">
+                                <td style="vertical-align: middle;"></td>
+                                <td style="vertical-align: middle;"><b>Qwen2.5-VL-7B+FAVOR-Train</b></td>
+                                <td style="vertical-align: middle;">--</td>
+                                <td style="vertical-align: middle;">1 fps</td>
+                                <td style="vertical-align: middle;">42.13</td>
+                                <td style="vertical-align: middle;">41.75</td>
+                                <td style="vertical-align: middle;">45.17</td>
+                                <td style="vertical-align: middle;">40.91</td>
+                                <td style="vertical-align: middle;">43.57</td>
+                                <td style="vertical-align: middle;">39.16</td>
+                                <td style="vertical-align: middle;">39.06</td>
+                                <td style="vertical-align: middle;">3.55</td>
+                                <td style="vertical-align: middle;">3.53</td>
+                                <td style="vertical-align: middle;">56.33</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="text-align: left; margin-top: 10px;">
+                        * Due to the API response limitations, the video input of proprietary MLLMs is restricted to 16 frames if the video is longer than 16 seconds (denoted as "1 fps*").
+                    </p>
+                    <p style="text-align: left;">
+                        GPT-C and GPT-D mean correctness and detailedness scores generated by GPT-4o.
+                    </p>
+                    <p style="text-align: left;">
+                        The highest and second-highest results among all MLLMs are indicated in <b>bold</b> and <u>underlined</u>.
                     </p>
                 </div>
-                <div class="col-lg-4">
-                    <img src="images/overview.png" alt="FAVOR-Bench Overview" class="img-fluid rounded">
-                </div>
             </div>
-        </section>
-
-        <!-- 结果部分 -->
-        <section id="results" class="mb-5">
-            <h2>Results</h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>Factuality</th>
-                            <th>Reasoning</th>
-                            <th>Robustness</th>
-                            <th>Overall</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>GPT-4</td>
-                            <td>85.3%</td>
-                            <td>79.7%</td>
-                            <td>82.1%</td>
-                            <td>82.4%</td>
-                        </tr>
-                        <tr>
-                            <td>Claude 2</td>
-                            <td>83.1%</td>
-                            <td>77.5%</td>
-                            <td>80.9%</td>
-                            <td>80.5%</td>
-                        </tr>
-                        <tr>
-                            <td>LLaMA 2</td>
-                            <td>78.6%</td>
-                            <td>74.2%</td>
-                            <td>75.8%</td>
-                            <td>76.2%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="text-center mt-3">
-                For complete results and analysis, please refer to our <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">paper</a>.
-            </p>
-        </section>
-
-        <!-- 示例部分 -->
-        <section id="demo" class="mb-5">
-            <h2>Demo</h2>
-            <div class="ratio ratio-16x9">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="FAVOR-Bench Demo" allowfullscreen></iframe>
-            </div>
-            <div class="text-center mt-3">
-                <a href="https://huggingface.co/spaces/username/FAVOR-Bench-demo" class="btn btn-primary" target="_blank">
-                    Try Interactive Demo
-                </a>
-            </div>
-        </section>
-
-        <!-- 方法部分 -->
-        <section id="method" class="mb-5">
-            <h2>Methodology</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>
-                        FAVOR-Bench evaluates models across four key dimensions:
-                    </p>
-                    <ul>
-                        <li><strong>Factuality</strong>: Assessing if model outputs contain accurate information</li>
-                        <li><strong>Adaptability</strong>: Measuring model performance across diverse domains</li>
-                        <li><strong>Versatility</strong>: Evaluating models on different types of reasoning tasks</li>
-                        <li><strong>Robustness</strong>: Testing model stability against adversarial inputs</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <img src="images/methodology.png" alt="FAVOR-Bench Methodology" class="img-fluid rounded">
-                </div>
-            </div>
-        </section>
-
-        <!-- 引用部分 -->
-        <section id="citation" class="mb-5">
-            <h2>Citation</h2>
-            <div class="citation-box p-3 bg-light">
-                <pre><code>@article{author2023favor,
-  title={FAVOR-Bench: A Comprehensive Benchmark for Evaluating Large Language Models},
-  author={Author, First and Author, Second and Author, Third},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2023}
-}</code></pre>
-            </div>
-        </section>
-
-        <!-- 团队部分 -->
-        <section id="team" class="mb-5">
-            <h2>Team</h2>
-            <div class="row text-center">
-                <div class="col-md-3 mb-4">
-                    <img src="images/person1.jpg" alt="Team Member 1" class="rounded-circle img-fluid team-img mb-2">
-                    <h5>Name 1</h5>
-                    <p class="text-muted">Affiliation</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <img src="images/person2.jpg" alt="Team Member 2" class="rounded-circle img-fluid team-img mb-2">
-                    <h5>Name 2</h5>
-                    <p class="text-muted">Affiliation</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <img src="images/person3.jpg" alt="Team Member 3" class="rounded-circle img-fluid team-img mb-2">
-                    <h5>Name 3</h5>
-                    <p class="text-muted">Affiliation</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <img src="images/person4.jpg" alt="Team Member 4" class="rounded-circle img-fluid team-img mb-2">
-                    <h5>Name 4</h5>
-                    <p class="text-muted">Affiliation</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <div class="container">
-            <p>&copy; 2023 FAVOR-Bench Team. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+<!-- 其余部分可以按照模板保留，根据需要适当修改内容 -->
+
+<!-- Citation Section -->
+<section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+    <pre><code>@misc{your-citation-key,
+      title={FAVOR-Bench: Fine-grained Audio-Visual Object Relational Understanding Benchmark},
+      author={Author List},
+      year={2025},
+      eprint={arxiv-id},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+</code></pre>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8">
+            <div class="content">
+                <p style="text-align: center;">
+                    This website is adapted from <a href="https://video-mme.github.io">Video-MME</a>, licensed under a
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        updateRowNumbers();
+        document.querySelector("#results").addEventListener("click", updateRowNumbers);
+    });
+
+    function updateRowNumbers() {
+        const rows = document.querySelectorAll("#results tbody tr");
+        let counter = 1;
+        rows.forEach((row) => {
+            // 只有没有colspan的行才添加编号
+            const firstCell = row.querySelector("td");
+            if (firstCell && !firstCell.hasAttribute("colspan")) {
+                firstCell.innerText = counter++;
+            }
+        });
+    }
+</script>
